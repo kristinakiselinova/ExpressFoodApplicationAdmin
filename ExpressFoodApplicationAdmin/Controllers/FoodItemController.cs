@@ -90,7 +90,6 @@ namespace ExpressFoodApplicationAdmin.Controllers
             var result = response.Content.ReadAsAsync<bool>().Result;
 
             return RedirectToAction("Index", "Order");
-
         }
     }
 }

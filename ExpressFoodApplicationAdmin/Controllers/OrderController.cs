@@ -83,7 +83,6 @@ namespace ExpressFoodApplicationAdmin.Controllers
 
         }
 
-
         [HttpGet]
         public FileContentResult ExportAllOrders()
         {
@@ -123,7 +122,6 @@ namespace ExpressFoodApplicationAdmin.Controllers
                     return File(content, contentType, fileName);
                 }
             }
-
         }
     }
 }

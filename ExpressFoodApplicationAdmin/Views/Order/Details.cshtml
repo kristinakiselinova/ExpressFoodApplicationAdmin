@@ -1,37 +1,32 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-@model ExpressFoodApplicationAdmin.Models.DeliveryOrder
+﻿@model ExpressFoodApplicationAdmin.Models.DeliveryOrder
+
 <div class="container">
-    <div>
-        <p>Order for @Model.Customer.UserName</p>
+    <h1 class="text-center mb-4" style="font-weight: 600; color: #333;">Order Details</h1>
+    <div class="text-center mb-4">
+        <p><strong>Order for:</strong> @Model.Customer.UserName</p>
     </div>
-
-    @for(int i=0;i<Model.FoodItemsInOrder.Count(); i++)
-    {
-        var item = Model.FoodItemsInOrder.ElementAt(i).FoodItem;
-        if(i % 3 == 0)
+    <div class="row">
+        @for (int i = 0; i < Model.FoodItemsInOrder.Count(); i++)
         {
-            @:<div class="row">
-        }
-        <div class="col-3 m-4">
-
-            <div class="card" style="width: 18rem; height: 35rem">
-                <img class="card-img-top" src="@item.FoodItemImage" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">@item.Name</h5>
-                    <p class="card-text">@item.Description</p>
-                    <h6>Price: @item.Price</h6>
+            var item = Model.FoodItemsInOrder.ElementAt(i).FoodItem;
+            if (i % 3 == 0)
+            {
+                @:<div class="row mb-4">
+            }
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100 border-0 shadow-sm rounded-3">
+                    <img src="@item.FoodItemImage" class="card-img-top rounded-top" alt="Food Item Image" style="height: 200px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column" style="background-color: #f8f9fa;">
+                        <h5 class="card-title mb-2" style="color: #2c3e50; font-weight: 600;">@item.Name</h5>
+                        <p class="card-text text-muted" style="font-size: 0.9rem;">@item.Description</p>
+                        <p class="mb-2" style="font-weight: 600;">Price: @item.Price ден.</p>
+                    </div>
                 </div>
-
             </div>
-        </div>
-
-        if(i % 3 == 2)
-        {
-            @:</div>
+            if (i % 3 == 2)
+            {
+                @:</div>
+            }
         }
-    }
+    </div>
 </div>

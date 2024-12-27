@@ -1,6 +1,44 @@
-﻿@{
-    ViewData["Title"] = "Privacy Policy";
-}
-<h1>@ViewData["Title"]</h1>
+﻿<h1 class="text-center mb-4" style="font-weight: 600; color: #333;">@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card border-0 shadow-sm rounded-3">
+                <div class="card-body" style="background-color: #f8f9fa;">
+                    <h4 class="mb-4 text-center">Privacy Policy</h4>
+                    <p class="text-muted mb-4">
+                        <div class="privacy-section">
+                            <div class="privacy-section">
+                                <h3>Privacy Policy</h3>
+                                <p>
+                                    At <strong>ExpressFood</strong>, we are committed to protecting and respecting your privacy. This Privacy
+                                    Policy explains how we collect, use, disclose, and safeguard your information when you visit our website
+                                    or use our services. Please read this policy carefully to understand our views and practices regarding
+                                    your personal data and how we will treat it.
+                                </p>
+                            </div>
+
+                            <h3>How We Use Your Information</h3>
+                            <p>We use the information we collect from you for the following purposes:</p>
+                            <ul>
+                                <li><strong>To process and complete your orders</strong></li>
+                                <li><strong>To improve customer service and support</strong></li>
+                                <li><strong>To send periodic emails regarding your orders or other products and services</strong></li>
+                            </ul>
+                        </div>
+                    </p>
+                    <p class="text-muted mb-4">
+                        We value our users' privacy and ensure that all data provided will be securely managed and not shared with third parties without consent.
+                    </p>
+                    <p class="text-muted mb-4">
+                        You may include more details here depending on your specific privacy requirements, like cookie policies, third-party integrations, etc.
+                    </p>
+                </div>
+                <div class="card-footer text-center">
+                    <a asp-action="Index" class="btn btn-outline-secondary rounded-pill px-4 py-2 shadow-sm">Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

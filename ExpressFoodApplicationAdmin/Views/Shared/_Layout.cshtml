@@ -3,16 +3,19 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - ExpressFoodApplicationAdmin</title>
+    <title>@ViewData["Title"] - ExpressFood Admin</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ExpressFoodApplicationAdmin.styles.css" asp-append-version="true" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ExpressFoodApplicationAdmin</a>
+                <a class="navbar-brand d-flex align-items-center" href="/">
+                    <img src="https://www.creativefabrica.com/wp-content/uploads/2020/10/27/Delivery-Logo-Graphics-6317845-1-1-580x386.jpg" alt="ExpressFood Logo" style="height: 50px; margin-right: 10px;" />
+                    <span style="font-size: 1.5rem; font-weight: 600; color: #dc3545;">ExpressFood Admin</span>
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -20,10 +23,10 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="Index">Get all orders</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="Index">Get All Orders</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="FoodItem" asp-action="Index">Import food items</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="FoodItem" asp-action="Index">Import Food Items</a>
                         </li>
                     </ul>
                 </div>
@@ -37,8 +40,9 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - ExpressFoodApplicationAdmin - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        <div class="container text-center">
+            &copy; 2024 - ExpressFood Admin - <a asp-area="" asp-controller="Home" asp-action="Privacy"
+                                                 class="btn btn-outline-secondary btn-sm rounded-pill no-hover">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

@@ -1,60 +1,43 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-@model List<ExpressFoodApplicationAdmin.Models.DeliveryOrder>
+﻿@model List<ExpressFoodApplicationAdmin.Models.DeliveryOrder>
+<h1 class="text-center mb-4" style="font-weight: 600; color: #333;">Orders</h1>
 
 <div class="container">
-    <div class="row">
-        <a asp-controller="Order" asp-action="ExportAllOrders" class="btn btn-info">Export Orders</a>
+    <div class="row mb-3">
+        <div class="col text-center">
+            <a asp-controller="Order" asp-action="ExportAllOrders" class="btn btn-info px-4 py-2 rounded-pill shadow-sm">Export Orders</a>
+        </div>
     </div>
-
-    <div class="row m-5">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>
-                        #
-                    </th>
-                    <th>
-                        Customer details
-                    </th>
-                    <th>
-                        Number of products
-                    </th>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                @for (int i = 0; i < Model.Count(); i++)
-                {
-                    var item = Model[i];
+    <div class="row">
+        <div class="col">
+            <table class="table table-striped table-hover shadow-sm rounded-3">
+                <thead class="table-dark">
                     <tr>
-                        <td>@(i + 1)</td>
-                        <td>
-                            @item.Customer.Name
-                        </td>
-                        <td>
-                            @item.Customer.Email
-                        </td>
-
-                        <td>
-                            @item.FoodItemsInOrder.Count()
-                        </td>
-                        <td>
-                            |
-                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">View Order</a>
-                        </td>
-                        <td>
-                            |
-                            <a asp-action="CreateInvoice" asp-route-id="@item.Id" class="btn btn-info">Create Invoice</a>
-                        </td>
+                        <th>#</th>
+                        <th>Customer Name</th>
+                        <th>Email</th>
+                        <th>Number of Products</th>
+                        <th colspan="2" class="text-center">Actions</th>
                     </tr>
-                }
-            </tbody>
-
-        </table>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i < Model.Count(); i++)
+                    {
+                        var item = Model[i];
+                        <tr>
+                            <td>@(i + 1)</td>
+                            <td>@item.Customer.Name</td>
+                            <td>@item.Customer.Email</td>
+                            <td>@item.FoodItemsInOrder.Count()</td>
+                            <td class="text-center">
+                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-info btn-sm rounded-pill px-3">View Order</a>
+                            </td>
+                            <td class="text-center">
+                                <a asp-action="CreateInvoice" asp-route-id="@item.Id" class="btn btn-outline-success btn-sm rounded-pill px-3">Create Invoice</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
